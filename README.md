@@ -10,13 +10,13 @@ By leveraging the causal intervention, we propose a model-agnostic text classifi
 - code/ 
   contains the source codes.
 - data/ 
-  contains example datasets used for evaluating.
+  contains eleven datasets used for evaluating.
 
 ### Reqirements:
 
 * Python (≥3.0)
 * PyTorch (≥1.0)
-* Hyperparameters are in _public.py.
+* All hyperparameters are in _public.py.
 
 
 ### Citation

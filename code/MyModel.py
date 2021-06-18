@@ -81,6 +81,7 @@ class SuperNetwork(nn.Module):
             trainbar.close()
             self.Evaluate(train_loader, dev_loader, test_loader, i+1)
 
+    # Get the embedding of a counterfactual document (averaged on training set)
     def Get_Counterfactual_Input(self, loader):
         if pb.Use_GPU == True: torch.cuda.empty_cache()
 
@@ -132,6 +133,7 @@ class SuperNetwork(nn.Module):
             testbar.close()
         if pb.Use_GPU == True: torch.cuda.empty_cache()
 
+        # Elastic scaling with local acceleration strategy
         if rates==None:
             Dirs = [[1.0, 0.0], [-1.0, 0.0], [0.0, 1.0], [0.0, -1.0], [1.0, 1.0], [-1.0, -1.0], [1.0, -1.0], [-1.0, 1.0]]
             best_x, best_y, best_dev_cmaf1, cmaf1_map = 0.0, 0.0, -pb.INF, {}

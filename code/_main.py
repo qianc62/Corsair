@@ -31,12 +31,15 @@ def MAIN():
     pb.Print('pb.Use_GPU={}'.format(pb.Use_GPU), color='blue')
     pb.Print_Line(color='blue')
 
+    # prepare a specific dataset
     myAllDataset = MyAllDataset(pb.Dataset_Name)
 
     if pb.Base_Model=='TextCNN':
         if pb.Dataset_Name not in ['Suning', 'Taobao']:
+            # English dictionary
             w2v_path = './w2v/glove.300d.en.txt'
         else:
+            # Chinese dictionary
             w2v_path = './w2v/fasttext.300d.zh.txt'
         print(w2v_path)
         w2v_pickle = w2v_path + '.pickle'

@@ -31,6 +31,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 
+# All Hyperparameters
 
 # variables
 Dataset_Names = ['Twitter']
@@ -122,22 +123,22 @@ def Get_Report(true_labels, pred_labels):
     pred_labels = [int(v) for v in pred_labels]
     # label_list = sorted(list(set(true_labels+pred_labels)))
     # label_list = YList
-    # macro_recall = metrics.recall_score(true_labels, pred_labels, average='macro')
-    macro_recall = -1.0
-    # micro_recall = metrics.recall_score(true_labels, pred_labels, average='micro')
-    micro_recall = -1.0
-    # macro_precision = metrics.precision_score(true_labels, pred_labels, average='macro')
-    macro_precision = -1.0
-    # micro_precision = metrics.precision_score(true_labels, pred_labels, average='micro')
-    micro_precision = -1.0
+    macro_recall = metrics.recall_score(true_labels, pred_labels, average='macro')
+    # macro_recall = -1.0
+    micro_recall = metrics.recall_score(true_labels, pred_labels, average='micro')
+    # micro_recall = -1.0
+    macro_precision = metrics.precision_score(true_labels, pred_labels, average='macro')
+    # macro_precision = -1.0
+    micro_precision = metrics.precision_score(true_labels, pred_labels, average='micro')
+    # micro_precision = -1.0
     # macro_f1 = metrics.f1_score(true_labels, pred_labels, average='macro')
-    macro_f1 = metrics.f1_score(y_true=true_labels, y_pred=pred_labels, average='macro')
-    # micro_f1 = metrics.f1_score(true_labels, pred_labels, average='micro')
-    micro_f1 = -1.0
-    # acc = metrics.accuracy_score(true_labels, pred_labels)
-    acc = -1.0
-    # auc = metrics.roc_auc_score(true_labels, pred_labels) if len(label_list)==2 else -0.0
-    auc = -1.0
+    # macro_f1 = metrics.f1_score(y_true=true_labels, y_pred=pred_labels, average='macro')
+    micro_f1 = metrics.f1_score(true_labels, pred_labels, average='micro')
+    # micro_f1 = -1.0
+    acc = metrics.accuracy_score(true_labels, pred_labels)
+    # acc = -1.0
+    auc = metrics.roc_auc_score(true_labels, pred_labels) if len(label_list)==2 else -0.0
+    # auc = -1.0
     # confusion_matrix = metrics.confusion_matrix(true_labels, pred_labels, labels=label_list)  if len(label_list)<=20 else [[]]
     confusion_matrix = [[]]
 
