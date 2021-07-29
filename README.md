@@ -1,6 +1,6 @@
 # Corsair
 
-This the the repository for the ACL-2021 paper [***Counterfactual Inference for Text Classification Debiasing***](https://aclanthology.org/2021.acl-long.422/).
+This the the repository for the ACL-2021 long paper --- [***Counterfactual Inference for Text Classification Debiasing***](https://aclanthology.org/2021.acl-long.422/).
 
 By leveraging the causal intervention, we propose a model-agnostic text classification debiasing framework – CORSAIR, which can effectively avoid employing data manipulations or designing balancing mechanisms.
 
